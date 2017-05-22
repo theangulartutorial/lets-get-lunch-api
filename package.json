@@ -7,9 +7,14 @@
     "dev": "nodemon -w src --exec \"babel-node src\"",
     "build": "babel src -s -D -d built",
     "prestart": "npm run -s build",
+    "start": "nodemon built/index.js",
     "api": "nodemon built/index.js",
     "api-test": "npm run test && NODE_ENV=test nodemon built/index.js",
     "test": "NODE_ENV=test mocha built/test --opts built/test/mocha.opts"
+  },
+  "engines": {
+    "node": "7.6.0",
+    "npm": "4.1.2"
   },
   "author": "",
   "license": "ISC",
@@ -20,8 +25,10 @@
     "cors": "^2.7.1",
     "express": "^4.14.0",
     "jsonwebtoken": "^7.1.9",
+    "moment": "^2.18.1",
     "mongodb": "^2.2.8",
     "mongoose": "^4.5.9",
+    "nodemon": "^1.10.2",
     "request": "^2.81.0",
     "request-promise": "^4.2.0"
   },
@@ -51,9 +58,7 @@
     "gulp-typescript": "^3.1.6",
     "jshint": "^2.9.3",
     "mocha": "^3.1.0",
-    "moment": "^2.18.1",
     "node-mocks-http": "^1.5.4",
-    "nodemon": "^1.10.2",
     "sinon": "^2.1.0",
     "typescript": "^2.2.2",
     "typings": "^1.4.0"
