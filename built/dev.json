@@ -1,6 +1,0 @@
-{
-  "port": 8080,
-  "testDB": "mongodb://localhost:27017/lets-get-lunch-test",
-  "secret": "secret",
-  "zomato": "c7803226951a33f15b8597c0e12d3184"
-}
