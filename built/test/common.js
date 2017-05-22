@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var chai = require("chai");
+var chaiHttp = require("chai-http");
+var spies = require("chai-spies");
+var Promise = require("bluebird");
+global.chai = chai;
+global.expect = global.chai.expect;
+global.should = global.chai.should();
+global.chaiHttp = chaiHttp;
+global.Promise = Promise;
+chai.use(chaiHttp);
+chai.use(spies);

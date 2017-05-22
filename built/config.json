@@ -1,0 +1,6 @@
+{
+  "port": 8080,
+  "bodyLimit": "100kb",
+  "testDB": "mongodb://heroku_kcw7v49t:heroku_kcw7v49t@ds149491.mlab.com:49491/heroku_kcw7v49t",
+  "secret": "secret"
+}
