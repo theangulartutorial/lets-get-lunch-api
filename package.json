@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon -w src --exec \"babel-node src\"",
     "build": "babel src -s -D -d built",
-    "prestart": "mkdir built && babel src -s -D -d built",
+    "postinstall": "babel src -s -D -d built",
     "start": "nodemon built/index.js",
     "api": "nodemon built/index.js",
     "api-test": "npm run test && NODE_ENV=test nodemon built/index.js",
