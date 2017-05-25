@@ -1,6 +1,6 @@
 import User from '../../models/user';
 import jwt = require('jsonwebtoken');
-let config = require('../../config.json');
+//let config = require('../../config.json');
 
 function create(req, res) {
   User.findOne({ username: req.body.username }).select('username password')
