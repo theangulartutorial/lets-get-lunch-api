@@ -4,8 +4,6 @@
   "description": "API for learning Angular2",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -w src --exec \"babel-node src\"",
-    "build": "babel src -s -D -d built",
     "postinstall": "gulp",
     "start": "nodemon built/index.js",
     "api": "nodemon built/index.js",
