@@ -1,6 +1,8 @@
 import * as jwt from 'jsonwebtoken';
 import Promise = require('bluebird');
-//let config = require('../../config.json');
+
+let config: any = {};
+config.secret = process.env.SESSION_SECRET;
 
 const isAuthenticated = function(req, res, next) {
   let token = req.get('Authorization');

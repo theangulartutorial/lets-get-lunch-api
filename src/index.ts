@@ -8,10 +8,6 @@ import api from './routes';
 
 let app = express();
 
-//if (process.env.NODE_ENV === 'test') {
-  //config = require('./dev.json');
-//}
-
 app.use(cors());
 app.use(bodyParser.json({ limit: '100kb' }));
 app.use(bodyParser.urlencoded({ extended: true }));

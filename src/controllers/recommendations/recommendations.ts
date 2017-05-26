@@ -2,7 +2,8 @@ import Event from '../../models/event';
 import User from '../../models/user';
 import * as rp from 'request-promise';
 
-//let config = require('../../dev.json');
+let config: any = {};
+config.zomato = process.env.ZOMATO_KEY;
 
 function get(req, res) {
   let sourceEvent: any;
