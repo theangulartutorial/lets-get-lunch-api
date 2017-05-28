@@ -3,8 +3,7 @@
 ### Setup
 The following files must be manually added to `/src`. These files contain metadata for our database including secret keys. Both files are listed within our `.gitignore` and as a result are not checked in to our repo.
 
-- `config.json` - configuration for production DB
-- `dev.json` - configuration for local DB
+- `config.json` - configuration for local development
 
 Structure:
 
@@ -13,7 +12,8 @@ Structure:
   "port": 8080,
   "bodyLimit": "100kb",
   "testDB": "mongodb://localhost:27017/name-of-db",
-  "secret": "supersecretkey"
+  "secret": "supersecretkey",
+  "zomato": "zomatokey"
 }
 
 ```
