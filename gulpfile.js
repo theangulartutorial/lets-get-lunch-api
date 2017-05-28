@@ -2,10 +2,15 @@ var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var tsProject = ts.createProject('tsconfig.json');
 
-gulp.task('default', ['move-test-config'], function() {
+gulp.task('default', ['move-dev-config', 'move-test-config'], function() {
   return tsProject.src()
     .pipe(tsProject())
     .js.pipe(gulp.dest('built'));
+});
+
+gulp.task('move-dev-config', function() {
+  return gulp.src(['./src/config.json'])
+    .pipe(gulp.dest('built'));
 });
 
 gulp.task('move-test-config', function() {

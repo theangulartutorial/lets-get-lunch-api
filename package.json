@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "gulp",
     "start": "nodemon built/index.js",
-    "api": "nodemon built/index.js",
+    "api": "NODE_ENV=test nodemon built/index.js",
     "api-test": "npm run test && NODE_ENV=test nodemon built/index.js",
     "test": "NODE_ENV=test mocha built/test --opts built/test/mocha.opts"
   },
