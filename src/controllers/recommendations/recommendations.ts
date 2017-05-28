@@ -2,8 +2,13 @@ import Event from '../../models/event';
 import User from '../../models/user';
 import * as rp from 'request-promise';
 
-let config: any = {};
-config.zomato = process.env.ZOMATO_KEY;
+let config: any;
+
+if (process.env.NODE_ENV === 'test') {
+  config = require('../../config.json');
+}
+
+let ZOMATO = process.env.ZOMATO_KEY || config.zomato;
 
 function get(req, res) {
   let sourceEvent: any;
@@ -62,7 +67,7 @@ function createCityRequestOptions(event) {
       'q': event.city
     },
     'headers': {
-      'user-key': config.zomato
+      'user-key': ZOMATO
     },
     'json': true
   };
@@ -77,7 +82,7 @@ function createRestaurantsRequestOptions (city, cuisines) {
       'cuisines': cuisines
     },
     'headers': {
-      'user-key': config.zomato
+      'user-key': ZOMATO
     },
     'json': true
   };
@@ -90,7 +95,7 @@ function createCuisineRequestOptions (city) {
       'city_id': city.id,
     },
     'headers': {
-      'user-key': config.zomato
+      'user-key': ZOMATO
     },
     'json': true
   }
